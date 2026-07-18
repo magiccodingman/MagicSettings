@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicSettings.Tests", "Magi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicSettings.Server", "MagicSettings.Server\MagicSettings.Server.csproj", "{876477AA-F425-456B-9E7A-30CC10F67EF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicSettings.Share", "MagicSettings.Share\MagicSettings.Share.csproj", "{C492C153-D111-4874-93B3-0E41A5FDEDB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{876477AA-F425-456B-9E7A-30CC10F67EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{876477AA-F425-456B-9E7A-30CC10F67EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{876477AA-F425-456B-9E7A-30CC10F67EF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C492C153-D111-4874-93B3-0E41A5FDEDB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C492C153-D111-4874-93B3-0E41A5FDEDB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C492C153-D111-4874-93B3-0E41A5FDEDB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C492C153-D111-4874-93B3-0E41A5FDEDB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
