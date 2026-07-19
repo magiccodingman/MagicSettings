@@ -20,7 +20,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MagicSettings
 {
-public interface IMagicSettings<out TSettings> where TSettings : class
+public interface IMagicSettings<TSettings> where TSettings : class
 {
     TSettings Current { get; }
     long Revision { get; }
