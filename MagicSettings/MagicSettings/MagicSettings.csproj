@@ -1,10 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <IsPackable>true</IsPackable>
     <PackageId>MagicSettings</PackageId>
+    <Title>MagicSettings</Title>
     <Description>Strongly typed configuration with generation, reconciliation, migrations, live overrides, and client-owned control-plane integration.</Description>
+    <PackageTags>configuration;settings;appsettings;dotnet;control-plane</PackageTags>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="../MagicSettings.Share/MagicSettings.Share.csproj" />
+    <ProjectReference Include="../MagicSettings.Share/MagicSettings.Share.csproj" PrivateAssets="all" />
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,18 @@
+<Project>
+  <PropertyGroup Condition="'$(IsPackable)' == 'true' and ('$(MSBuildProjectName)' == 'MagicSettings' or '$(MSBuildProjectName)' == 'MagicSettings.Server')">
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);IncludeMagicSettingsShareInPackage</TargetsForTfmSpecificBuildOutput>
+  </PropertyGroup>
+
+  <Target Name="IncludeMagicSettingsShareInPackage"
+          Condition="'$(IsPackable)' == 'true' and ('$(MSBuildProjectName)' == 'MagicSettings' or '$(MSBuildProjectName)' == 'MagicSettings.Server')"
+          DependsOnTargets="BuildOnlySettings;ResolveReferences">
+    <ItemGroup>
+      <_MagicSettingsShareAssembly Include="@(ReferenceCopyLocalPaths)"
+                                   Condition="'%(ReferenceCopyLocalPaths.Filename)' == 'MagicSettings.Share' and '%(ReferenceCopyLocalPaths.Extension)' == '.dll'" />
+      <BuildOutputInPackage Include="@(_MagicSettingsShareAssembly)" />
+    </ItemGroup>
+
+    <Error Condition="'@(_MagicSettingsShareAssembly)' == ''"
+           Text="MagicSettings.Share.dll was not found in the resolved project references and cannot be included in the NuGet package." />
+  </Target>
+</Project>

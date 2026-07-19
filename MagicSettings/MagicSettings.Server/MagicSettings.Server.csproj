@@ -1,10 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <IsPackable>true</IsPackable>
     <PackageId>MagicSettings.Server</PackageId>
+    <Title>MagicSettings Server</Title>
     <Description>Storage-agnostic server helpers for MagicSettings enrollment, synchronization, authorization, and proof verification.</Description>
+    <PackageTags>configuration;settings;server;dotnet;control-plane</PackageTags>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="../MagicSettings.Share/MagicSettings.Share.csproj" />
+    <ProjectReference Include="../MagicSettings.Share/MagicSettings.Share.csproj" PrivateAssets="all" />
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 </Project>
