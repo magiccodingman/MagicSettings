@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - run: dotnet restore MagicSettings.sln
+        working-directory: MagicSettings
+      - run: dotnet build MagicSettings.sln --configuration Release --no-restore
+        working-directory: MagicSettings
+      - run: dotnet test MagicSettings.sln --configuration Release --no-build --logger "console;verbosity=normal"
+        working-directory: MagicSettings
