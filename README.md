@@ -150,6 +150,7 @@ The default HTTP transport signs the secret name and request target. It never wr
 
 - [API reference](wiki/api-reference.md)
 - [AI agent usage guide](wiki/agent-usage.md)
+- [Source layout](wiki/source-layout.md)
 - [Getting started](wiki/getting-started.md)
 - [Architecture and ownership](wiki/configuration.md)
 - [Configuration precedence](wiki/configuration.md)
