@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <IsPackable>false</IsPackable>
     <PackageId>MagicSettings.Share</PackageId>
     <Description>Shared protocol, schema, and security contracts for MagicSettings clients and control-plane implementations.</Description>
   </PropertyGroup>
