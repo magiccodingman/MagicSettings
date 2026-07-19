@@ -158,3 +158,4 @@ public static class MagicIdentityPathResolver
         return Path.HasExtension(fullPath) ? fullPath : Path.Combine(fullPath, fileName);
     }
 }
+}
