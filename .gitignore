@@ -1,22 +1,17 @@
-## Build output
 [Bb]in/
 [Oo]bj/
 artifacts/
-*.user
-*.suo
+TestResults/
+coverage/
 .idea/
 .vs/
-
-## Runtime state and secrets
-**/.magic-ai/
-**/state/
+*.user
+*.suo
 *.pfx
 *.pem
 *.key
 *.password
-appsettings.Local.json
 .env
-
-## Test output
-TestResults/
-coverage/
+**/.magicsettings.identity.json
+**/.magicsettings.identity.json.*
+appsettings.Local.json

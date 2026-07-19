@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Restore
+        working-directory: MagicSettings
+        run: dotnet restore MagicSettings.sln
+      - name: Build
+        id: build
+        working-directory: MagicSettings
+        shell: bash
+        run: |
+          set +e
+          dotnet build MagicSettings.sln --configuration Release --no-restore --consoleLoggerParameters:ErrorsOnly > ../build.log 2>&1
+          exit_code=$?
+          grep -E "(^|[[:space:]])(error|warning) (CS|NU|NETSDK|MSB)[0-9]+|Build FAILED|Build succeeded" ../build.log > ../build-summary.log || true
+          cat ../build-summary.log
+          exit $exit_code
+      - name: Upload build diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-diagnostics
+          path: |
+            build.log
+            build-summary.log
+          if-no-files-found: error
+      - name: Test
+        working-directory: MagicSettings
+        run: dotnet test MagicSettings.sln --configuration Release --no-build --logger "console;verbosity=normal"
