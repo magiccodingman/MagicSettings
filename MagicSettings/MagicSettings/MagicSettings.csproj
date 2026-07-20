@@ -5,9 +5,11 @@
     <Title>MagicSettings</Title>
     <Description>Strongly typed configuration with generation, reconciliation, migrations, live overrides, and client-owned control-plane integration.</Description>
     <PackageTags>configuration;settings;appsettings;dotnet;control-plane</PackageTags>
+    <PackageIcon>128x128_compressed.png</PackageIcon>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="../MagicSettings.Share/MagicSettings.Share.csproj" PrivateAssets="all" />
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <None Include="../128x128_compressed.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
